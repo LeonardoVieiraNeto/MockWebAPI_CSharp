@@ -1,0 +1,39 @@
+﻿@model List<mockapi.Net.Models.Aluno>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <td></td>
+        <th>Id </th>
+        <th>Nome </th>
+        <th>Logradouro </th>
+        <td>Número </td>
+        <td>Bairro </td>
+        <td>Cidade </td>
+        <td>Estado </td>
+    </tr>
+    @foreach (var i in Model)
+    {
+        //var teste = d.Id;
+        <tr>
+            <td>
+                <a href="@Url.Action("Deletar", "Aluno", new { id = i.Id })" class="btn btn-sm">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
+            </td>
+            <td>@i.Id</td>
+            <td>@i.Nome</td>
+            <td>@i.Logradouro</td>
+            <td>@i.Numero</td>
+            <td>@i.Bairro</td>
+            <td>@i.Cidade</td>
+            <td>@i.Estado</td>
+        </tr>
+    }
+</table>  
